@@ -8,11 +8,11 @@ MCP Server per gestire Deluge tramite API JSON-RPC.
 # Le dipendenze sono già installate nel venv
 
 # IMPORTANTE: Configura le variabili d'ambiente
-export DELUGE_URL=https://deluge.brambrilliant.work/json
+export DELUGE_URL=https://your-deluge-server.com/json
 export DELUGE_PASSWORD=your_password_here
 
 # Oppure crea/modifica .env
-echo "DELUGE_URL=https://deluge.brambrilliant.work/json" > .env
+echo "DELUGE_URL=https://your-deluge-server.com/json" > .env
 echo "DELUGE_PASSWORD=your_password_here" >> .env
 
 # Test server
@@ -30,7 +30,7 @@ Aggiungi al file di configurazione MCP di Q CLI (`~/.config/q/mcp_servers.json`)
       "command": "/home/enrico/Sorgenti/mcp-server-deluge/server.py",
       "args": [],
       "env": {
-        "DELUGE_URL": "https://deluge.brambrilliant.work/json",
+        "DELUGE_URL": "https://your-deluge-server.com/json",
         "DELUGE_PASSWORD": "your_password_here"
       }
     }
@@ -54,7 +54,7 @@ Aggiungi al file di configurazione Kiro (`~/.config/kiro/mcp_servers.json`):
       "command": "/home/enrico/Sorgenti/mcp-server-deluge/server.py",
       "args": [],
       "env": {
-        "DELUGE_URL": "https://deluge.brambrilliant.work/json",
+        "DELUGE_URL": "https://your-deluge-server.com/json",
         "DELUGE_PASSWORD": "your_password_here"
       }
     }
@@ -88,4 +88,4 @@ get_deluge_stats()
 - Verifica che Deluge Web UI sia accessibile
 - Controlla le credenziali in `.env`
 - Assicurati che il virtual environment sia attivo
-- Testa la connessione con `python -c "import requests; print(requests.get('https://deluge.brambrilliant.work').status_code)"`
+- Testa la connessione con `python -c "import requests; print(requests.get('https://your-deluge-server.com').status_code)"`
