@@ -1,4 +1,4 @@
-#!/home/enrico/Sorgenti/mcp-server-deluge/venv/bin/python
+#!/usr/bin/env python3
 """
 Deluge MCP Server - Provides torrent management capabilities via Deluge Web API
 """

@@ -5,7 +5,14 @@ MCP Server per gestire Deluge tramite API JSON-RPC.
 ## Setup
 
 ```bash
-# Le dipendenze sono già installate nel venv
+# Clone the repository
+git clone https://github.com/SingingSword/mcp-server-deluge.git
+cd mcp-server-deluge
+
+# Create virtual environment and install dependencies
+python3 -m venv venv
+source venv/bin/activate
+pip install fastmcp requests
 
 # IMPORTANTE: Configura le variabili d'ambiente
 export DELUGE_URL=https://your-deluge-server.com/json
@@ -27,7 +34,7 @@ Aggiungi al file di configurazione MCP di Q CLI (`~/.config/q/mcp_servers.json`)
 {
   "mcpServers": {
     "deluge": {
-      "command": "/home/enrico/Sorgenti/mcp-server-deluge/server.py",
+      "command": "/path/to/mcp-server-deluge/server.py",
       "args": [],
       "env": {
         "DELUGE_URL": "https://your-deluge-server.com/json",
@@ -40,7 +47,7 @@ Aggiungi al file di configurazione MCP di Q CLI (`~/.config/q/mcp_servers.json`)
 
 Oppure usa il comando Q CLI:
 ```bash
-q mcp add deluge /home/enrico/Sorgenti/mcp-server-deluge/server.py
+q mcp add deluge /path/to/mcp-server-deluge/server.py
 ```
 
 ## Integrazione con Kiro
@@ -51,7 +58,7 @@ Aggiungi al file di configurazione Kiro (`~/.config/kiro/mcp_servers.json`):
 {
   "servers": {
     "deluge": {
-      "command": "/home/enrico/Sorgenti/mcp-server-deluge/server.py",
+      "command": "/path/to/mcp-server-deluge/server.py",
       "args": [],
       "env": {
         "DELUGE_URL": "https://your-deluge-server.com/json",
